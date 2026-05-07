@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #050505, #12000d);
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,0,128,0.30), transparent 70%);
+    top: -200px;
+    left: -200px;
+    filter: blur(50px);
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,20,147,0.25), transparent 70%);
+    bottom: -250px;
+    right: -200px;
+    filter: blur(50px);
+}
+
+.container {
+    position: relative;
+    width: 380px;
+    padding: 40px;
+    border-radius: 25px;
+    background: rgba(20,20,20,0.85);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(255,0,128,0.15), 0 0 80px rgba(255,0,128,0.08);
+    animation: floating 4s ease-in-out infinite;
+    z-index: 2;
+}
+
+@keyframes floating {
+    0%,100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+h1 { color: white; text-align: center; margin-bottom: 30px; font-size: 34px; letter-spacing: 1px; }
+
+.input-group { margin-bottom: 20px; }
+
+/* CORREÇÃO AQUI: Adicionei o ponto antes de input-group */
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+    outline: none;
+    background: rgba(255,255,255,0.05);
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.input-group input::placeholder { color: rgba(255,255,255,0.55); }
+.input-group input:focus {
+    border-color: #ff0080;
+    box-shadow: 0 0 10px rgba(255,0,128,0.3), 0 0 20px rgba(255,0,128,0.2);
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff0080, #ff4fd8);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(255,0,128,0.5), 0 0 40px rgba(255,0,128,0.2);
+}
+
+.tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; }
+.tab {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    color: white;
+    text-decoration: none; /* Importante para os links */
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.tab.active {
+    background: linear-gradient(135deg, #ff0080, #ff4fd8);
+    box-shadow: 0 0 15px rgba(255,0,128,0.4);
+}
+
+@media(max-width: 480px) {
+    .container { width: 92%; padding: 30px; }
+}
+
+/* Estilo para mensagens de erro do Laravel */
+.error-msg {
+    color: #ff4f4f;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
