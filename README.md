@@ -1,14 +1,15 @@
 # 🔐 Sistema de Login - Laravel
 
-Sistema de autenticação completo e seguro desenvolvido com **Laravel**, focado em boas práticas de desenvolvimento web, segurança e uma interface moderna e responsiva.
+Sistema de autenticação desenvolvido com **Laravel**, focado em boas práticas de desenvolvimento web, segurança e uma interface moderna e responsiva.
 
 ---
 
 ## 📸 Preview
 
 <p align="center">
-  <img src="sistema-login\resources\Cap.png" alt="Login Preview" width="800">
+  <img src="resources/Cap.png" alt="Login Preview" width="800">
 </p>
+
 
 ---
 
